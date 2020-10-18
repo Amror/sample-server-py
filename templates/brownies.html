@@ -1,0 +1,67 @@
+{% extends "base.html" %}
+
+{% block title %}Brownies{% endblock %}
+{% block content %}
+
+<div id="filler"></div>
+<h1 class="topic"><span class="underline">Brownies</span></h1>
+<div id="content">
+    <h2><span class="underline">Table of contents</span></h2>
+    <img src="{{ url_for('static', filename='assets/imgs/choc3.jpg') }}" class="side">
+    <ol class="list-content">
+        <li><a href="#Information">Information</a></li>
+        <li><a href="#Ingredients">Ingredients</a></li>
+        <li><a href="#Instructions">Instructions</a></li>
+        <li><a href="#Notes">Notes</a></li>
+        <li><a href="#Images">Images</a></li>
+    </ol>
+    <h2 id="Information"><span class="underline">Information about the recipe:</span></h2>
+    <p class="info">
+        <b>Prep time:</b> 25 minutes<br>
+        <b>Cook time:</b> 35 minutes<br>
+        <b>Total time:</b> 1 hour<br>
+        <b>Course:</b> Dessert<br>
+        <b>Calories:</b> 182kcal<br>
+    </p>
+    <h2 id="Ingredients"><span class="underline">Ingredients:</span></h2>
+    <ul class="list-content">
+        <li>1/2 cup butter</li>
+        <li>1 cup white sugar</li>
+        <li>2 large eggs eggs</li>
+        <li>1 teaspoon vanilla extract</li>
+        <li>1/3 cup unsweetened cocoa powder</li>
+        <li>1/2 cup all-purpose flour</li>
+        <li>1/4 teaspoon salt</li>
+        <li>1/4 teaspoon baking powder</li>
+        <li>3 tablespoons butter, softened</li>
+        <li>3 tablespoons unsweetened cocoa powder</li>
+        <li>1 tablespoon honey</li>
+        <li>1 teaspoon vanilla extract</li>
+        <li>1 cup confectioners' sugar</li>
+    </ul>
+    <h2 id="Instructions"><span class="underline">Instructions:</span></h2>
+    <ol class="list-content">
+        <li>Preheat oven to 350 degrees F (175 degrees C). Grease and flour an 8-inch square pan.</li>
+        <li>In a large saucepan, melt 1/2 cup butter. Remove from heat, and stir in sugar, eggs, and 1 teaspoon vanilla. Beat in 1/3 cup cocoa, 1/2 cup flour, salt, and baking powder. Spread batter into prepared pan.</li>
+        <li>Bake in preheated oven for 25 to 30 minutes. Do not overcook.</li>
+        <li>To Make Frosting: Combine 3 tablespoons softened butter, 3 tablespoons cocoa, honey, 1 teaspoon vanilla extract, and 1 cup confectioners' sugar. Stir until smooth. Frost brownies while they are still warm.</li>
+    </ol>
+    <h2 id="Notes"><span class="underline">Notes:</span></h2>
+    <p class="info">
+        Wonderful little brownie! Not too thick, not too thin, just right! Comes together and into the oven in less than 5 minutes.
+    </p>
+    <h2 id="Images"><span class="underline">Images:</span></h2>
+    <div id="imagescon">
+        <img src="{{ url_for('static', filename='assets/imgs/left.png') }}" class="arrow" id="arrowleft">
+        <div id="innerimages">
+            <img src="{{ url_for('static', filename='assets/imgs/choc3.jpg') }}" class="visible">
+            <img src="{{ url_for('static', filename='assets/imgs/brownies1.jpg') }}">
+            <img src="{{ url_for('static', filename='assets/imgs/brownies2.jpg') }}">
+            <img src="{{ url_for('static', filename='assets/imgs/brownies3.jpg') }}">
+            <img src="{{ url_for('static', filename='assets/imgs/brownies4.jpg') }}">
+        </div>
+        <img src="{{ url_for('static', filename='assets/imgs/right.png') }}" class="arrow" id="arrowright">
+    </div>
+</div>
+
+{% endblock %}

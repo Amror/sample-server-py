@@ -1,0 +1,68 @@
+{% extends "base.html" %}
+
+{% block title %}Chocolate Cake{% endblock %}
+{% block content %}
+
+<div id="filler"></div>
+<h1 class="topic"><span class="underline">Chocolate Cake</span></h1>
+<div id="content">
+    <h2><span class="underline">Table of contents</span></h2>
+    <img src="{{ url_for('static',filename='assets/imgs/choc4.jpg') }}" class="side">
+    <ol class="list-content">
+        <li><a href="#Information">Information</a></li>
+        <li><a href="#Ingredients">Ingredients</a></li>
+        <li><a href="#Instructions">Instructions</a></li>
+        <li><a href="#Notes">Notes</a></li>
+        <li><a href="#Images">Images</a></li>
+    </ol>
+    <h2 id="Information"><span class="underline">Information about the recipe:</span></h2>
+    <p class="info">
+        <b>Prep time:</b> 15 minutes<br>
+        <b>Cook time:</b> 30 minutes<br>
+        <b>Total time:</b> 45 minutes<br>
+        <b>Course:</b> Dessert<br>
+        <b>Calories:</b> 124kcal<br>
+    </p>
+    <h2 id="Ingredients"><span class="underline">Ingredients:</span></h2>
+    <ul class="list-content">
+        <li>2 cups all-purpose flour</li>
+        <li>2 cups sugar</li>
+        <li>3/4 cup unsweetened cocoa powder</li>
+        <li>2 teaspoons baking powder</li>
+        <li>1 1/2 teaspoons baking soda</li>
+        <li>1 teaspoon salt</li>
+        <li>1 teaspoon espresso powder</li>
+        <li>1 cup milk buttermilk, almond, or coconut milk</li>
+        <li>1/2 cup vegetable oil canola oil, or melted coconut oil</li>
+        <li>2 large eggs</li>
+        <li>2 teaspoons vanilla extract</li>
+        <li>1 cup boiling water</li>
+        <li>Chocolate Buttercream</li>
+    </ul>
+    <h2 id="Instructions"><span class="underline">Instructions:</span></h2>
+    <ol class="list-content">
+        <li>Preheat oven to 350º F. Prepare two 9-inch cake pans by spraying with baking spray or buttering and lightly flouring.</li>
+        <li>Add flour, sugar, cocoa, baking powder, baking soda, salt and espresso powder to a large bowl or the bowl of a stand mixer. Whisk through to combine or, using your paddle attachment, stir through flour mixture until combined well.</li>
+        <li>Add milk, vegetable oil, eggs, and vanilla to flour mixture and mix together on medium speed until well combined. Reduce speed and carefully add boiling water to the cake batter until well combined.</li>
+        <li>Distribute cake batter evenly between the two prepared cake pans. Bake for 30-35 minutes, until a toothpick or cake tester inserted in the center of the chocolate cake comes out clean.</li>
+        <li>Remove from the oven and allow to cool for about 10 minutes, remove from the pan and cool completely.</li>
+    </ol>
+    <h2 id="Notes"><span class="underline">Notes:</span></h2>
+    <p class="info">
+        The cake batter will be very thin after adding the boiling water.<br>This is correct and results in the most delicious and moist chocolate cake I’ve ever tasted!
+    </p>
+    <h2 id="Images"><span class="underline">Images:</span></h2>
+    <div id="imagescon">
+        <img src="{{ url_for('static',filename='assets/imgs/left.png') }}" class="arrow" id="arrowleft">
+        <div id="innerimages">
+            <img src="{{ url_for('static',filename='assets/imgs/choc4.jpg') }}" class="visible">
+            <img src="{{ url_for('static',filename='assets/imgs/choc2.jpg') }}">
+            <img src="{{ url_for('static',filename='assets/imgs/choc1.jpg') }}">
+            <img src="{{ url_for('static',filename='assets/imgs/choc.jpg') }}">
+            <img src="{{ url_for('static',filename='assets/imgs/choccake.jpg') }}">
+        </div>
+        <img src="{{ url_for('static',filename='assets/imgs/right.png') }}" class="arrow" id="arrowright">
+    </div>
+</div>
+
+{% endblock %}

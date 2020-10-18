@@ -1,0 +1,61 @@
+{% extends "base.html" %}
+
+{% block title %}Chocolate Pudding{% endblock %}
+{% block content %}
+
+<div id="filler"></div>
+<h1 class="topic"><span class="underline">Chocolate Pudding</span></h1>
+<div id="content">
+    <h2><span class="underline">Table of contents</span></h2>
+    <img src="{{ url_for('static', filename='assets/imgs/chopud4.jpeg') }}" class="side">
+    <ol class="list-content">
+        <li><a href="#Information">Information</a></li>
+        <li><a href="#Ingredients">Ingredients</a></li>
+        <li><a href="#Instructions">Instructions</a></li>
+        <li><a href="#Notes">Notes</a></li>
+        <li><a href="#Images">Images</a></li>
+    </ol>
+    <h2 id="Information"><span class="underline">Information about the recipe:</span></h2>
+    <p class="info">
+        <b>Prep time:</b> 10 minutes<br>
+        <b>Cook time:</b> None<br>
+        <b>Total time:</b> 10 minutes<br>
+        <b>Course:</b> Dessert<br>
+        <b>Calories:</b> 392kcal<br>
+    </p>
+    <h2 id="Ingredients"><span class="underline">Ingredients:</span></h2>
+    <ul class="list-content">
+        <li>1 cup sugar</li>
+        <li>1/2 cup baking cocoa</li>
+        <li>1/4 cup cornstarch</li>
+        <li>1/2 teaspoon salt</li>
+        <li>4 cups whole milk</li>
+        <li>2 tablespoons butter</li>
+        <li>2 teaspoons vanilla extract</li>
+        <li>OPTIONAL: Sweetened whipped cream and M&M's</li>
+    </ul>
+    <h2 id="Instructions"><span class="underline">Instructions:</span></h2>
+    <ol class="list-content">
+        <li>In a heavy saucepan, combine sugar, cocoa, cornstarch and salt. Gradually add milk.<br>Bring to a boil over medium heat; boil and stir for 2 minutes. Remove from the heat; stir in butter and vanilla.<br>Spoon into individual serving dishes. Chill until serving. If desired, garnish with whipped cream and M&M's.</li>
+    </ol>
+    <h2 id="Notes"><span class="underline">Notes:</span></h2>
+    <p class="info">
+        Puddings and custards can get lumpy. To prevent lumpy pudding, whisk all the dry ingredients together in a saucepan.<br>Then gradually add the milk, a little bit at a time, whisking thoroughly after each addition until the mixture is smooth. As you are bringing the mixture to a boil, continue stirring constantly. Wondering what the difference between pudding and custard is? It's simpler than you think!<br>
+        We recommending using whole milk.<br>Whole milk lends to this pudding’s desirable thick and creamy texture. If you use anything lighter, the pudding will be thin. Also, alternate milks (like soy, almond and coconut) won't thicken properly.<br>
+        There are plenty of different ways to serve this pudding.<br> We recommend turning it into a pie! Fill a baked pastry shell with the hot pudding and refrigerate it overnight. Then, top it all off with whipped cream. Enjoy!
+    </p>
+    <h2 id="Images"><span class="underline">Images:</span></h2>
+    <div id="imagescon">
+        <img src="{{ url_for('static', filename='assets/imgs/left.png') }}" class="arrow" id="arrowleft">
+        <div id="innerimages">
+            <img src="{{ url_for('static', filename='assets/imgs/chopud1.jpg') }}" class="visible">
+            <img src="{{ url_for('static', filename='assets/imgs/chopud2.png') }}">
+            <img src="{{ url_for('static', filename='assets/imgs/chopud3.jpg') }}">
+            <img src="{{ url_for('static', filename='assets/imgs/chopud4.jpeg') }}">
+            <img src="{{ url_for('static', filename='assets/imgs/chopud5.jpg') }}">
+        </div>
+        <img src="{{ url_for('static', filename='assets/imgs/right.png') }}" class="arrow" id="arrowright">
+    </div>
+</div>
+
+{% endblock %}

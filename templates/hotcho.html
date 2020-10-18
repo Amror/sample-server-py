@@ -1,0 +1,60 @@
+{% extends "base.html" %}
+
+{% block title %}Hot Chocolate{% endblock %}
+{% block content %}
+
+<div id="filler"></div>
+<h1 class="topic"><span class="underline">Hot Chocolate</span></h1>
+<div id="content">
+    <h2><span class="underline">Table of contents</span></h2>
+    <img src="{{ url_for('static', filename='assets/imgs/hotcho1.jpg') }}" class="side">
+    <ol class="list-content">
+        <li><a href="#Information">Information</a></li>
+        <li><a href="#Ingredients">Ingredients</a></li>
+        <li><a href="#Instructions">Instructions</a></li>
+        <li><a href="#Notes">Notes</a></li>
+        <li><a href="#Images">Images</a></li>
+    </ol>
+    <h2 id="Information"><span class="underline">Information about the recipe:</span></h2>
+    <p class="info">
+        <b>Prep time:</b> 5 minutes<br>
+        <b>Cook time:</b> 10 minutes<br>
+        <b>Total time:</b> 15 minutes<br>
+        <b>Course:</b> Dessert<br>
+        <b>Calories:</b> 470kcal<br>
+    </p>
+    <h2 id="Ingredients"><span class="underline">Ingredients:</span></h2>
+    <ul class="list-content">
+        <li>2 cups whole milk</li>
+        <li>2 tbsp sugar *</li>
+        <li>4 oz bittersweet chocolate chopped (just under 1 cup measured)</li>
+        <li>splash of vanilla extract optional</li>
+        <li>whipped cream optional</li>
+        <li>marshmallows optional</li>
+    </ul>
+    <h2 id="Instructions"><span class="underline">Instructions:</span></h2>
+    <ol class="list-content">
+        <li>Combine milk and sugar in a small saucepan and place on the stovetop over medium heat.</li>
+        <li>While the milk is heating place the chopped chocolate in the microwave and heat for 30 seconds. Take the chocolate out and stir it. Return to microwave and heat for another thirty seconds, remove and stir. Continue to heat and stir the chocolate in 30 second intervals until just melted.</li>
+        <li>When the milk reaches the scalding point (180 degrees F, with bubbles on the side), turn off the heat and add the melted chocolate, whisking to combine. Add the vanilla extract now, if desired. Top with whipped cream or marshmallows if using, and enjoy!</li>
+    </ol>
+    <h2 id="Notes"><span class="underline">Notes:</span></h2>
+    <p class="info">
+        Make sure you don’t overheat the milk. You want it to just have bubbles on the sides, about 180 degrees F. You do not want the milk to boil. <br>
+        *If you use a sweeter chocolate such as semisweet or milk chocolate, you may want to reduce or eliminate the sugar altogether. You can always sweeten to taste at the end.
+    </p>
+    <h2 id="Images"><span class="underline">Images:</span></h2>
+    <div id="imagescon">
+        <img src="{{ url_for('static', filename='assets/imgs/left.png') }}" class="arrow" id="arrowleft">
+        <div id="innerimages">
+            <img src="{{ url_for('static', filename='assets/imgs/hotcho5.jpg') }}" class="visible">
+            <img src="{{ url_for('static', filename='assets/imgs/hotcho1.jpg') }}">
+            <img src="{{ url_for('static', filename='assets/imgs/hotcho2.jpg') }}">
+            <img src="{{ url_for('static', filename='assets/imgs/hotcho3.jpg') }}">
+            <img src="{{ url_for('static', filename='assets/imgs/hotcho4.jpg') }}">
+        </div>
+        <img src="{{ url_for('static', filename='assets/imgs/right.png') }}" class="arrow" id="arrowright">
+    </div>
+</div>
+
+{% endblock %}

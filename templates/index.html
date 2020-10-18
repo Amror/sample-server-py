@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+
+    <head>
+        <title>Postres De Chocolate</title>
+        <meta charset="utf-8">
+        <meta name="author" content="Amror">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <link href="https://fonts.googleapis.com/css?family=Satisfy" rel="stylesheet">
+        <link href="{{ url_for('static', filename='assets/css/style.css') }}" rel="stylesheet">
+        <link href="{{ url_for('static', filename='assets/imgs/favicon.ico') }}" rel="shortcut icon" type="image/x-icon">
+    </head>
+    <body>
+        <div id="bg-con">
+            <div id="outermenu">
+                <div id="logo">
+                    <img src="{{ url_for('static', filename='assets/imgs/logo.png') }}" alt="Postres De Chocolate">
+                </div>
+                <div id="menu">
+                    <nav>
+                        <ul>
+                            <li><a href="{{domain}}/pages/cake">Chocolate Cake</a></li>
+                            <li><a href="{{domain}}/pages/brownies">Brownies</a></li>
+                            <li><a href="{{domain}}/pages/hot-chocolate">Hot Chocolate</a></li>
+                            <li><a href="{{domain}}/pages/chocolate-pudding">Chocolate Pudding</a></li>
+                            <li><a href="{{domain}}/pages/molten-cake">Molten Chocolate Cake</a></li>
+                            <li>
+                                <a href="https://www.youtube.com/watch?v=dQw4w9WgXcQ" target="_blank" rel="noopener noreferrer">
+                                    Chocolate Rolls</a>
+                            </li>
+                        </ul>
+                    </nav>
+                <h4 id="credits">
+                    <a href="https://github.com/Amror" target="_blank" rel="noopener noreferrer">Created by Amror &copy;</a>
+                </h4>    
+                </div>
+            </div>
+        </div>
+    </body>
+
+</html>

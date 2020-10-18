@@ -1,0 +1,71 @@
+body {
+    margin: 0px;
+}
+#bg-con {
+    width: 100%;
+    height: 100%;
+    background-image: url("../imgs/choc3.jpg");
+    margin: 0px;
+    padding: 0px;
+    position: relative;
+}
+#outermenu {
+    background-color: white;
+    width: 700px;
+    height: 100vh;
+} 
+
+#logo {
+    top: 150px;
+    left: 200px;
+    position: absolute;
+    border-bottom-color: black;
+    border-bottom-style: solid;
+
+}
+#menu {
+    top: 280px;
+    left: 200px;
+    width: 300px;
+    border: black 1px;
+    border-style: solid;
+    position: absolute;
+}
+li {
+    font-family: "Satisfy";
+    font-size: 26px;
+    /*padding-left: 0.5px;*/    
+    margin: 20px;
+    list-style-type: none;
+    border-bottom-color: black;
+    border-bottom-style: solid;
+    transition: color 0.3s ease-in;
+    position: relative;
+    right: 20px;
+}
+
+li:hover {
+    color: gray;
+}
+
+a {
+    color: black;
+    text-decoration: none;
+    transition: color 0.3s ease-in;
+}
+
+a:hover {
+    color: gray;
+}
+
+#credits {
+    top: 420px;
+    left: 65px;
+    font-family: "Satisfy";
+    font-size: 24px;
+    margin: 0px;
+    position: absolute;
+    border-top: solid 1px black;
+    border-bottom: solid 1px black;
+    white-space: nowrap;
+}

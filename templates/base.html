@@ -1,0 +1,151 @@
+<!DOCTYPE html>
+<html lang="en">
+
+    <!-- HTML template for other site pages -->
+    <head>
+        <title>{% block title %}{% endblock %}</title>
+        <meta charset="utf-8">
+        <meta name="author" content="Amror">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <link href="https://fonts.googleapis.com/css?family=Satisfy" rel="stylesheet">
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+        <link href="{{ url_for('static', filename='assets/css/base.css') }}" rel="stylesheet">
+        <link href="{{ url_for('static', filename='assets/imgs/favicon.ico') }}" rel="shortcut icon" type="image/x-icon">
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script> 
+        <script src="{{ url_for('static',filename='assets/js/slider.js') }}"></script>
+        <script src="{{ url_for('static',filename='assets/js/validate.js') }}"></script>
+        <script src="{{ url_for('static',filename='assets/js/rating.js') }}"></script>
+    </head>
+
+    <body>
+
+        <div class="navcon">
+            <nav>
+                <a href="{{domain}}/"><img src="{{ url_for('static', filename='assets/imgs/logo.png') }}" alt="Postres De Chocolate" class="barlogo"></a>
+                <ul class="bar">
+                    <li><a href="{{domain}}/pages/cake">Chocolate Cake</a></li>
+                    <li><a href="{{domain}}/pages/brownies">Brownies</a></li>
+                    <li><a href="{{domain}}/pages/hot-chocolate">Hot Chocolate</a></li>
+                    <li><a href="{{domain}}/pages/chocolate-pudding">Chocolate Pudding</a></li>
+                    <li><a href="{{domain}}/pages/molten-cake">Molten Chocolate Cake</a></li>
+                    <li>
+                        <a href="https://www.youtube.com/watch?v=dQw4w9WgXcQ" target="_blank" rel="noopener noreferrer">
+                        Chocolate Rolls</a>
+                    </li>
+                </ul>
+            </nav>
+        </div>
+        
+        
+
+        <div class="recipe-left">
+            <img src="{{ url_for('static',filename='assets/imgs/c3.png') }}" class="bgleft">
+            {% if user %}
+                <div class="rating-box">
+                    <h3 style="margin: 2px; position: relative; left: 15px; top: 10px"><span class="underline">Rate This Recipe!</span></h3>
+                    <div class="stars-con">
+                        {% for _ in range(user.ratings[recipe_name])%}
+                            <span class="fa fa-star checked"></span>
+                        {% endfor %}
+                        {% for _ in range(5 - user.ratings[recipe_name])%}
+                            <span class="fa fa-star"></span>
+                        {% endfor %}
+                    </div>
+                    <button type="button" class="recolor" style="left: 47px; top: 35px;" id="rating-save">Save</button>
+                </div>
+            {% endif %}
+        </div>
+
+        <div class="recipe-right">
+            <img src="{{ url_for('static',filename='assets/imgs/c2.png') }}" class="bgright">
+            {% if user %}
+                <div id="logged-con" class="input-form on-top" style="height: 230px;">
+                    <h2 style="text-align: center; padding-bottom: 2px; margin-top: 5px; border-bottom: solid black 2px;">Welcome, {{ user.username }}!</h2>
+                    <form action="{{ url_for('logout') }}" method="POST">
+                        <button type="submit" class="recolor" style="margin-left: 30px; margin-bottom: 5px;">Logout</button>
+                    </form>
+                    <button type="button" class="recolor back-change">Change Password</button>
+                    <form action="{{ url_for('delete') }}" method="POST" id="delete-account">
+                        <button type="submit" class="recolor" style="margin-left: 10px; margin-top: 5px;">Delete Account</button>
+                    </form>
+                </div>
+
+                <div id="change-con" class="input-form">
+                    <h2 style="text-align: center; padding-bottom: 2px; margin-top: 5px; margin-bottom: 10px; border-bottom: solid black 2px;">Change Password :</h2>
+                    <form method="POST" action="{{ url_for('change_password') }}" id="change-form" style="position: relative; bottom: 5px; z-index: 1000;">
+                        <label for="psw" class="space" style="margin-top: 5px;">Current Password :</label>
+                        <input type="password" placeholder="Enter Current Password" name="currpsw" class="space big" required>
+                        <label for="psw" class="space" style="margin-top: 5px;">New Password :</label>
+                        <input type="password" placeholder="Enter New Password" name="newpsw" class="space big" required>
+                        <label for="psw" class="space" style="margin-top: 5px;">Reenter New Password :</label>
+                        <input type="password" placeholder="Reenter New Password" name="renewpsw" class="space big" required>
+                        <button type="submit" class="recolor" style="margin-top: 3px;">Change Password</button>
+                        <br>
+                        <button type="button" class="recolor back-change" style="margin-left: 35px;">Back</button>
+                    </form>
+                </div>
+
+            {% else %}
+                <div id="login-con" class="input-form on-top">
+                    <h2 style="text-align: center; padding-bottom: 2px; margin-top: 5px; border-bottom: solid black 2px;">Login :</h2>
+                    <form method="POST" action="{{ url_for('login') }}" id="login-form" style="position: relative; bottom: 5px; z-index: 1000;">
+                        <label for="email" class="space">Email :</label>
+                        <input type="text" placeholder="Enter Email" name="email" class="space big" required>
+                        <label for="psw" class="space">Password :</label>
+                        <input type="password" placeholder="Enter Password" name="psw" class="space big" required>
+                        <br>
+                        <label class="space mar"><input type="checkbox" checked="checked" name="remember"> Remember me </label>
+                        <br>
+                        <button type="submit" class="recolor">Login</button>
+                        <button type="button" class="recolor" id="change-sign-up">Sign up</button>
+                        <button type="button" class="recolor" id="change-reset">Reset Password</button>
+                    </form>
+                </div>
+                <div id="sign-up-con" class="input-form" style="height: 305px;">
+                    <h2 style="text-align: center; padding-bottom: 2px; margin-top: 5px; margin-bottom: 10px; border-bottom: solid black 2px;">Register :</h2>
+                    <form method="POST" action="{{ url_for('register') }}" id="signup-form" style="position: relative; bottom: 5px; z-index: 1000;">
+                        <label for="email" class="space">Email :</label>
+                        <input type="text" placeholder="Enter Email" name="email" class="space big" required>
+                        <label for="username" class="space">Username :</label>
+                        <input type="text" placeholder="Enter Username" name="username" class="space big" required>
+                        <label for="psw" class="space">Password :</label>
+                        <input type="password" placeholder="Enter Password" name="psw" class="space big" required>
+                        <label for="psw" class="space">Reenter Password :</label>
+                        <input type="password" placeholder="Reenter Password" name="repsw" class="space big" required>
+                        <br>
+                        <button type="submit" class="recolor">Sign up</button>
+                        <button type="button" class="recolor" id="back-sign">Back</button>
+                    </form>
+                </div>
+
+                <div id="reset-con" class="input-form" style="height: 180px;">
+                    <h2 style="text-align: center; padding-bottom: 2px; margin-top: 5px; margin-bottom: 10px; border-bottom: solid black 2px;">Reset Password :</h2>
+                    <form method="POST" id="reset-form" style="position: relative; bottom: 5px; z-index: 1000;">
+                        <label for="email" class="space" style="margin-top: 5px;">Email :</label>
+                        <input type="text" placeholder="Enter Email" name="email" class="space big" required>
+                        <button type="submit" class="recolor" style="margin-top: 3px;">Reset Password</button>
+                        <br>
+                        <button type="button" class="recolor" id="back-reset" style="margin-left: 35px;">Back</button>
+                    </form>
+                </div>
+            {% endif %}
+        </div>
+
+        <div class="recipe-mid">{% block content %}{% endblock %}</div>
+
+        <footer>
+            <div class="credits">
+                <a href="https://github.com/Amror" target="_blank" rel="noopener noreferrer" class="cred-con">Created by Amror &copy;</a>
+            </div> 
+        </footer>
+        
+        {% with messages = get_flashed_messages() %}
+            {% if messages %}
+                {% for message in messages %}
+                 <script>$(document).ready(function(){ alert("{{message}}"); });</script>
+                {% endfor %}
+            {% endif %}
+        {% endwith %}
+
+    </body>
+</html>

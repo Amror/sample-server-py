@@ -1,0 +1,289 @@
+
+:root {
+  --recipe-start: 308px;
+  --recipe-width: 1300px;
+  --recipe-height: 2200px;
+  --recipe-right-width: 294px;
+  --nav-color: rgb(245, 245, 245);
+}
+
+body {
+    margin: 0px;    
+}
+
+
+h1, h2, h3, h4, h5, h6, form {
+    font-family: "Satisfy";
+}
+
+#content {
+    position: relative;
+    right: 250px;
+    font-family: "Satisfy"; 
+}
+
+.topic {
+    position: relative;
+    font-size: 35px;
+    left: 240px;
+    top: 10px;
+}
+
+.underline {
+    border-bottom: 2px black solid;
+}
+
+nav {
+    margin-left: 310px;
+    width: 1300px;
+    height: 120px;
+    position: relative;
+    padding-bottom: 10px;
+    z-index: -1;
+}
+
+.navcon {
+    width: 100vw;
+    background-color: var(--nav-color);
+    margin: 0px;
+    position: fixed;    
+    border-bottom: 2px black;
+    border-bottom-style: solid;
+    z-index: 1;
+}
+
+
+
+img.barlogo {
+    position: absolute;
+    top: 10px; 
+    left: 5px;
+}
+
+ul.bar {
+    float: right;
+    margin-top: 100px;
+    margin-bottom: 0px;
+}
+
+ul.bar li {
+    display: inline;
+    padding-right: 10px;
+    padding-left: 10px;
+    border: 1px black;
+    border-right-style: solid;
+    font-family: "Satisfy";
+    font-size: 22px;
+}
+
+ul.bar li:first-child {
+    border: 1px black;
+    border-left-style: solid;
+    border-right-style: solid;
+}
+
+
+#filler {
+    width: 1300px;
+    height: 130px;
+}
+
+.credits {
+    text-align: center;
+    font-family: "Satisfy";
+    font-size: 30px;
+    height: 100px;
+    position: relative;
+    top: 90px;
+}
+
+a.cred-con {
+    padding: 5px;
+    border-top: solid black 1px;
+    border-bottom: solid black 1px;
+}
+
+.recipe-mid {
+    width: var(--recipe-width);
+    height: var(--recipe-height);
+    left: var(--recipe-start);
+    position: relative;
+    border: black 1px;
+    border-right-style: solid;
+    border-left-style: solid;
+
+}
+
+
+.recipe-left {
+    width: var(--recipe-start);
+    height: var(--recipe-height);
+    float: left;
+    position: relative;
+}
+
+
+.recipe-right {
+    width: var(--recipe-right-width);
+    height: var(--recipe-height);
+    float: right;
+    position: relative;
+}
+
+img.bgleft {
+    position: fixed;
+    top: 134px;
+    width: 308px;
+    height: 840px;
+    z-index: -3;
+}
+
+img.bgright {
+    position: fixed;
+    top: 134px;
+    width: 294px;
+    height: 840px;
+    z-index: -3;
+}
+
+
+.list-content {
+    font-size: 21px;
+    z-index: 1;
+}
+
+.list-content li {
+    position: relative;
+    left: 15px;
+}
+
+
+h2.info {
+    border-bottom: 1px black solid;
+}
+
+p.info {
+    font-size: 21px;
+}
+
+img.side {
+    float: right;
+    width: 650px;
+    height: 450px;
+    position: relative;
+    left: 160px;
+    top: 30px;
+    border: black 1px solid;
+}
+
+.input-form {
+    width: 200px;
+    height: 280px;
+    position: fixed;
+    top: 300px;
+    right: 40px;
+    background-color: var(--nav-color);
+    border: black 2px solid;
+    display: none;
+}
+
+.on-top {
+    display: block;
+}
+
+.rating-box {
+    width: 150px;
+    height: 125px;
+    position: fixed;
+    top: 325px;
+    left: 70px;
+    z-index: 1;
+    background-color: var(--nav-color);
+    border: black 2px solid;
+}
+
+.stars-con {
+    position: relative;
+    top: 25px;
+    left: 27px;
+
+}
+
+form input.big {
+    width: 170px;
+}
+
+label {
+    font-size: 20px;
+}
+
+
+.space {
+    position: relative;
+    left: 5px;
+}
+
+label.mar {
+    position: relative;
+    top: 3px;
+}
+
+button.recolor {
+    font-family: "Satisfy";
+    font-size: 17px;
+    margin: 2px;
+    position: relative;
+    left: 33px;
+    top: 5px;
+    border: 1px black solid;
+    background-color: white;
+}
+
+
+#imagescon {
+    display: flex;
+    position: relative;
+    left: 80px;
+    top: 10px;
+
+}
+
+#innerimages img {
+    border: 2px black solid;
+    width: 800px;   
+    height: 500px;
+    display: none;
+}
+
+.arrow {
+    width: 100px;
+    height: 50px;
+    cursor: pointer;
+    margin-top: 200px;
+}
+
+
+#innerimages img.visible {
+    display: inline-block;
+}
+
+footer {
+    width: calc(var(--recipe-right-width) + var(--recipe-start) + var(--recipe-width));
+    height: 200px;
+    background-color: var(--nav-color);
+    z-index: -2;
+}
+
+span.checked {
+    color: orange;
+} 
+
+a {
+    color: black;
+    text-decoration: none;
+    transition: color 0.3s ease-in;
+}
+
+a:hover {
+    color: gray;
+}
